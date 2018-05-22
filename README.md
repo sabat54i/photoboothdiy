@@ -1,2 +1,1 @@
-# photoboothdiy
-# photoboothdiy
+# photobooth
