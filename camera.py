@@ -4,7 +4,6 @@ import time
 import os
 import PIL.Image
 import cups
-#import piggyphoto
 import RPi.GPIO as GPIO
 
 from threading import Thread
@@ -21,10 +20,10 @@ CountDownPhoto = ""
 CountPhotoOnCart = ""
 SmallMessage = ""  # SmallMessage is a lower banner message
 TotalImageCount = 0  # Counter for Display and to monitor paper usage
-PhotosPerCart = 300  # Selphy takes 16 sheets per tray
+PhotosPerCart = 30  # Selphy takes 16 sheets per tray
 imagecounter = 0
 imagefolder = 'Photos'
-templatePath = os.path.join('Photos', 'Template', "template.png")
+templatePath = os.path.join('Photos', 'Template', "template.png") #Path of template image
 ImageShowed = False
 Printing = False
 BUTTON_PIN = 25
@@ -119,31 +118,24 @@ def set_demensions(img_w, img_h):
         transform_x = infoObject.current_w
         transform_y = infoObject.current_h
         offset_y = offset_x = 0
-	
 
-def InitUsb():
+def InitFolder():
     global imagefolder
     global Message
-
-    imagefolder = 'Photos'
-    rootdir = '/media/'
-    Message = 'USB Check...'
+ 
+    Message = 'Folder Check...'
     UpdateDisplay()
     Message = ''
 
-    dirs = os.listdir(rootdir)
-    for file in dirs:
-        folder = os.path.join(rootdir, file)
-        if not file == 'SETTINGS' and os.path.isdir(folder):
-            usbcheck = True
-            imagedrive = os.path.join(rootdir, file)
-            imagefolder = os.path.join(imagedrive, 'Photobooth')
-            if not os.path.isdir(imagefolder):
-                os.makedirs(imagefolder)
-            imagefolder2 = os.path.join(imagefolder, 'images')
-            if not os.path.isdir(imagefolder2):
-                os.makedirs(imagefolder2)
-
+	#check image folder existing, create if not exists
+    
+	if not os.path.isdir(imagefolder):	
+		os.makedirs(imagefolder)	
+		
+	imagefolder2 = os.path.join(imagefolder, 'images')
+	if not os.path.isdir(imagefolder2):
+		os.makedirs(imagefolder2)
+		
 def DisplayText(fontSize, textToDisplay):
     global Numeral
     global Message
@@ -346,10 +338,6 @@ def TakePictures():
         image3 = PIL.Image.open(filename3)   
         TotalImageCount = TotalImageCount + 1
 	
-        # paste the thumbnails to the background images
-##        bgimage.paste(image1, (606, 19))
-##        bgimage.paste(image2, (606, 405))
-##        bgimage.paste(image3, (30, 405))
         bgimage.paste(image1, (625, 30))
         bgimage.paste(image2, (625, 410))
         bgimage.paste(image3, (55, 410))
@@ -461,7 +449,7 @@ def WaitForEvent():
             time.sleep(0.2)
 
 def main(threadName, *args):
-    InitUsb()
+	InitFolder()
     while True:
             show_image('images/start_camera.jpg')
             WaitForEvent()
