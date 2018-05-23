@@ -13,12 +13,17 @@ To enable the camera module there is a little configuration to do: https://www.r
 
 2. Prepare Raspbian with all librairies you need
 
-Install Python (because program is made with Python), you will find how to do here: https://www.raspberrypi.org/documentation/linux/software/python.md
-Install Pygame (library for python graphical interface), more information here: https://www.packtpub.com/mapt/book/hardware_and_creative/9781785285066/3/ch03lvl1sec19/installing-pygame
-Install Picamera (library for the camera module of Raspberry pi): https://www.raspberrypi.org/documentation/linux/software/python.md
-Install Python module RPI.GPIO (library for control Raspberry GPIO for the arcade button): https://learn.adafruit.com/playing-sounds-and-using-buttons-with-raspberry-pi/install-python-module-rpi-dot-gpio
-Install CUPS to add a printer on Raspbian, you will find how to do here: https://www.howtogeek.com/169679/how-to-add-a-printer-to-your-raspberry-pi-or-other-linux-computer/
-Install PIL (library for images on Python): https://www.pkimber.net/howto/python/modules/pillow.html
+* Install Python (because program is made with Python), you will find how to do here: https://www.raspberrypi.org/documentation/linux/software/python.md
+
+* Install Pygame (library for python graphical interface), more information here: https://www.packtpub.com/mapt/book/hardware_and_creative/9781785285066/3/ch03lvl1sec19/installing-pygame
+
+* Install Picamera (library for the camera module of Raspberry pi): https://www.raspberrypi.org/documentation/linux/software/python.md
+
+* Install Python module RPI.GPIO (library for control Raspberry GPIO for the arcade button): https://learn.adafruit.com/playing-sounds-and-using-buttons-with-raspberry-pi/install-python-module-rpi-dot-gpio
+
+* Install CUPS to add a printer on Raspbian, you will find how to do here: https://www.howtogeek.com/169679/how-to-add-a-printer-to-your-raspberry-pi-or-other-linux-computer/
+
+* Install PIL (library for images on Python): https://www.pkimber.net/howto/python/modules/pillow.html
 
 To run it you just have to launch a terminal, navagate to the program folder and type "sudo python camera.py"
 
