@@ -3,7 +3,7 @@
 Here you will find code for my wedding photobooth made with a Raspberry pi under Raspbian.
 It can be optimised but I didn't have time to do.
 
-You can see all steps to make a photobooth on this instructables: https://www.instructables.com/id/Wedding-Event-Photobooth/
+You can see all steps to make a photobooth on my instructables: https://www.instructables.com/id/Wedding-Event-Photobooth/
 
 Requires for the code works:
 
