@@ -127,14 +127,13 @@ def InitFolder():
     UpdateDisplay()
     Message = ''
 
-	#check image folder existing, create if not exists
-    
-	if not os.path.isdir(imagefolder):	
-		os.makedirs(imagefolder)	
-		
-	imagefolder2 = os.path.join(imagefolder, 'images')
-	if not os.path.isdir(imagefolder2):
-		os.makedirs(imagefolder2)
+    #check image folder existing, create if not exists
+    if not os.path.isdir(imagefolder):	
+        os.makedirs(imagefolder)	
+            
+    imagefolder2 = os.path.join(imagefolder, 'images')
+    if not os.path.isdir(imagefolder2):
+        os.makedirs(imagefolder2)
 		
 def DisplayText(fontSize, textToDisplay):
     global Numeral
@@ -449,7 +448,7 @@ def WaitForEvent():
             time.sleep(0.2)
 
 def main(threadName, *args):
-	InitFolder()
+    InitFolder()
     while True:
             show_image('images/start_camera.jpg')
             WaitForEvent()
@@ -460,3 +459,4 @@ def main(threadName, *args):
 
 # launch the main thread
 Thread(target=main, args=('Main', 1)).start()
+
